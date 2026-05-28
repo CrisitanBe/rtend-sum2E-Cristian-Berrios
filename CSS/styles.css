@@ -1,0 +1,77 @@
+
+:root{
+	--blue-600:#0b6fb0;
+	--blue-500:#1e88d1;
+	--blue-400:#4da6e0;
+	--muted:#6b7280;
+	--bg:#f7f9fb;
+	--card-bg:#ffffff;
+	--accent:#0b6fb0;
+	--max-width:1100px;
+}
+*{box-sizing:border-box}
+body{font-family:Roboto, system-ui, -apple-system, 'Segoe UI', Arial;line-height:1.5;color:#102a43;background:var(--bg);margin:0}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+/* Header - Flexbox */
+.site-header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:saturate(120%) blur(4px);border-bottom:1px solid #e6edf3;z-index:40}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
+.brand h1{margin:0;font-family:Merriweather, serif;color:var(--blue-600);font-size:1.25rem}
+.brand .tag{margin:0;font-size:0.85rem;color:var(--muted)}
+.main-nav a{margin-left:1rem;color:#0f1724;text-decoration:none;font-weight:500}
+.main-nav a:hover{color:var(--accent)}
+
+main{padding-top:92px}
+
+/* Hero */
+.hero{padding:3rem 0;background:linear-gradient(135deg,var(--blue-600),var(--blue-400));color:#fff}
+.hero-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.hero-text{max-width:56%}
+.hero-text h2{font-family:Merriweather, serif;font-size:2rem;margin:0 0 0.5rem}
+.hero-text p{margin:0 0 1rem;opacity:0.95}
+.btn{display:inline-block;padding:0.75rem 1rem;border-radius:6px;text-decoration:none}
+.btn.primary{background:#fff;color:var(--blue-600);font-weight:600}
+.hero-stats{display:flex;gap:1rem}
+.stat{background:rgba(255,255,255,0.12);padding:0.75rem 1rem;border-radius:8px;text-align:center}
+.stat strong{display:block;font-size:1.25rem}
+
+/* Especialidades - Grid */
+.especialidades{padding:2.5rem 0}
+.especialidades h3{margin-top:0;margin-bottom:1rem;font-family:Merriweather, serif}
+.grid-especialidades{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--card-bg);padding:1rem;border-radius:10px;box-shadow:0 1px 6px rgba(16,42,67,0.06)}
+.spec{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem}
+.spec-icon{font-size:2rem;background:linear-gradient(180deg,#eef8ff,#f7fbff);padding:0.5rem;border-radius:8px}
+
+/* Medicos - Flexbox */
+.medicos{padding:2.5rem 0}
+.medicos-list{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap}
+.medico{display:flex;align-items:center;gap:1rem;flex:1 1 300px}
+.avatar{width:96px;height:96px;background:linear-gradient(135deg,#e6f2fb,#f4fbff);border-radius:8px}
+.info h4{margin:0}
+.role{color:var(--accent);margin:0.25rem 0}
+
+/* Obras Sociales */
+.obras{padding:2.5rem 0}
+.obras-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.75rem}
+.obra{background:#fff;padding:0.75rem;border-radius:8px;text-align:center;box-shadow:0 1px 4px rgba(16,42,67,0.05)}
+
+/* Contacto */
+.contacto{padding:2.5rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:start}
+.map-placeholder{background:#eaf5ff;border:2px dashed #cfeefc;border-radius:8px;padding:1rem;text-align:center;color:var(--muted)}
+
+/* Footer */
+.site-footer{background:#fff;border-top:1px solid #e6edf3;padding:1rem 0;margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+	.hero-inner{flex-direction:column;align-items:flex-start}
+	.hero-text{max-width:100%}
+	.container{padding:1rem}
+}
+
+@media (min-width:1024px){
+	.grid-especialidades{grid-template-columns:repeat(3,1fr)}
+}
