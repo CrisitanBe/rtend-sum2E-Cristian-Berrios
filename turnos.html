@@ -10,6 +10,7 @@
 <body>
   <main class="page">
     <h1>Solicitar Turno</h1>
+    <div id="confirmationMessage" class="confirmation" aria-live="polite" style="display:none"></div>
     <form id="turnoForm" class="turno-form" novalidate>
       <fieldset>
         <legend>1. Datos del Paciente</legend>
@@ -47,12 +48,12 @@
         <label for="especialidad">Especialidad</label>
         <select id="especialidad" name="especialidad" required>
           <option value="" disabled selected>Seleccione especialidad</option>
-          <option>Clinica General</option>
-          <option>Cardiologia</option>
-          <option>Pediatria</option>
-          <option>Ginecologia</option>
-          <option>Traumatologia</option>
-          <option>Neurologia</option>
+          <option value="clinica">Clínica General</option>
+          <option value="cardiologia">Cardiología</option>
+          <option value="pediatria">Pediatría</option>
+          <option value="ginecologia">Ginecología</option>
+          <option value="traumatologia">Traumatología</option>
+          <option value="neurologia">Neurología</option>
         </select>
 
         <label for="medico">Médico</label>
@@ -150,83 +151,6 @@
     </form>
   </main>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const especialidad = document.getElementById('especialidad');
-      const medico = document.getElementById('medico');
-      const plataformaWrap = document.getElementById('plataformaWrap');
-      const modalidad = document.getElementById('modalidad');
-      const cobertura = document.getElementById('cobertura');
-      const credencialWrap = document.getElementById('credencialWrap');
-      const primera = document.getElementById('primera');
-      const comoWrap = document.getElementById('comoNosConocioWrap');
-      const estudios = document.getElementById('estudios');
-      const descEstudiosWrap = document.getElementById('descEstudiosWrap');
-
-      const medicosPorEspecialidad = {
-        'Clinica General': ['Dr. Laura Ruiz','Dr. Martín Díaz'],
-        'Cardiologia': ['Dra. Ana Torres','Dr. Luis Herrera'],
-        'Pediatria': ['Dra. María López','Dr. Felipe Ramos'],
-        'Ginecologia': ['Dra. Carla Méndez','Dra. Julia Ortiz'],
-        'Traumatologia': ['Dr. Andrés Gómez','Dr. Sergio Vega'],
-        'Neurologia': ['Dra. Natalia Cruz','Dr. Pablo Soto']
-      };
-
-      function actualizarMedicos(){
-        const esp = especialidad.value;
-        medico.innerHTML = '<option value="" disabled selected>Seleccione médico</option>';
-        medico.disabled = true;
-        if(medicosPorEspecialidad[esp]){
-          medicosPorEspecialidad[esp].forEach(function(nombre){
-            const opt = document.createElement('option');
-            opt.value = nombre; opt.textContent = nombre;
-            medico.appendChild(opt);
-          });
-          medico.disabled = false;
-        }
-      }
-
-      especialidad.addEventListener('change', actualizarMedicos);
-
-      modalidad.addEventListener('change', function(){
-        if(modalidad.value === 'Videoconsulta'){
-          plataformaWrap.style.display = 'block';
-        } else {
-          plataformaWrap.style.display = 'none';
-          document.getElementById('plataforma').selectedIndex = 0;
-        }
-      });
-
-      cobertura.addEventListener('change', function(){
-        if(cobertura.value && cobertura.value !== 'Particular'){
-          credencialWrap.style.display = 'block';
-        } else {
-          credencialWrap.style.display = 'none';
-          document.getElementById('credencial').value = '';
-          document.getElementById('plan').value = '';
-        }
-      });
-
-      primera.addEventListener('change', function(){
-        comoWrap.style.display = primera.checked ? 'block' : 'none';
-      });
-
-      estudios.addEventListener('change', function(){
-        descEstudiosWrap.style.display = estudios.checked ? 'block' : 'none';
-      });
-
-      // Reset handler to hide conditionals
-      document.getElementById('turnoForm').addEventListener('reset', function(){
-        setTimeout(function(){
-          plataformaWrap.style.display = 'none';
-          credencialWrap.style.display = 'none';
-          comoWrap.style.display = 'none';
-          descEstudiosWrap.style.display = 'none';
-          medico.innerHTML = '<option value="" disabled selected>Seleccione médico</option>';
-          medico.disabled = true;
-        }, 0);
-      });
-    });
-  </script>
+  <script src="js/validaciones.js"></script>
 </body>
 </html>

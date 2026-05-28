@@ -14,6 +14,12 @@ textarea{resize:vertical}
 /* Conditional fields hidden by default */
 .conditional{display:none}
 
+.campo-error{border-color:#dc2626 !important;background:#fee2e2 !important}
+.campo-ok{border-color:#16a34a !important;background:#dcfce7 !important}
+.mensaje-error{color:#b91c1c;font-size:0.85rem;margin-top:0.25rem}
+.confirmation{display:none;background:#e0f2fe;border:1px solid #7dd3fc;color:#0369a1;padding:1rem;border-radius:8px;margin-bottom:1rem}
+.confirmation strong{color:#0c4a6e}
+
 /* Hover and focus states */
 input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(14,105,160,0.12);border-color:var(--accent)}
 input:hover,select:hover,textarea:hover{border-color:var(--accent)}
