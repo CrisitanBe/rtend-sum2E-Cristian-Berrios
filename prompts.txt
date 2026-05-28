@@ -1,0 +1,211 @@
+1:Genera una pagina principal (index.html) del sitio de SaludPlus. Esta pagina debe presentar la clinica de 
+forma profesional.header debe contener nombre de la clinica: "SaludPlus", Menu de navegacion con enlaces a las secciones de la pagina, inicio, Especialidades, Medicos, Obras Sociales, Contacto.El menu debe permanecer visible al hacer scroll (position: fixed).
+En la sección hero con un fondo o de color azul con degradado(CSS),titulo principal y subtitulo descriptivo de la clinica, boton de llamada a la accion: "Solicitar turno" que redirija a turnos.html,indicadores de confianza: al menos 3 datos destacados (ej. cantidad de especialidades, anos de 
+experiencia, pacientes atendidos
+Especialidades Medicas grilla con al menos 6 especialidades disponibles (ej. Clinica General, Cardiologia, Pediatria, 
+Ginecologia, Traumatologia, Neurologia), Layout implementado con CSS Grid (minimo 3 columnas en pantallas grandes), cada especialidad debe mostrar un icono o imagen representativa(que se adjuntará a posterior), nombre y breve descripcion.
+Nuestros Medicos seccion con al menos 3 profesionales del equipo medico,cada tarjeta debe incluir: nombre completo, especialidad, breve descripcion o frase y un placeholder de imagen (puede ser un div con fondo de color),layout con Flexbox
+Obras Sociales lista o grilla con al menos 6 obras sociales y/o prepagas aceptadas (ej. OSDE, Swiss Medical, 
+Galeno, IOMA, Medicus, Sancor Salud), presentacion clara con nombre de cada cobertura.
+Contacto y Footer datos de contacto: direccion, telefono, email, horario de atencion, mapa placeholder (un div con texto), footer con derechos reservados y nombre del autor.
+para requisitos css
+Usar CSS Grid para la seccion de Especialidades.
+Usar Flexbox para el header y la seccion de Medicos.
+Paleta de colores coherente y profesional, acorde a un sitio medico.
+Fuentes legibles; se puede usar Google Fonts (max. 2 familias).
+El sitio debe verse correctamente en pantallas de al menos 1024px de ancho
+2:Voy a crear la lista de tareas (plan) para este cambio. Luego leeré los archivos actuales antes de aplicar los parches.
+Created 5 todos
+Ahora voy a leer index.html y styles.css para revisarlos antes de editar.
+Voy a actualizar index.html y styles.css con la estructura completa y los estilos solicitados. Luego te indicaré dónde revisar los cambios.
+Aplicaré los cambios: crearé la estructura HTML y los estilos CSS solicitados. Ahora aplico el parche.
+Listo — creé la estructura de index.html y los estilos en styles.css.
+He implementado: header fijo (Flexbox), sección hero con degradado y CTA a turnos.html, indicadores de confianza, Especialidades con CSS Grid (6 items), Médicos con Flexbox (3 tarjetas), Obras Sociales (6 items) y Contacto + footer.
+Próximo paso: revisá la página en un navegador (resolución >=1024px) y decime si querés que añada imágenes/íconos reales o ajustes de texto/colores.
+
+3:El codigo sugerido creó una landing page simple, cumpliendo con lo solictado detallando especialidades de la clinica asi como profesionales que trabajan en ella y contacto cumpliendo con los requerimientos solicitado
+4:No se modifico nada ya que lo entregado funcionó sin problemas y cumplio con lo pedido
+
+
+
+------------------------------------------
+1:archivos principales:turnos.html + css/turnos.css. tecnologias HTML5 con inputs semanticos, CSS3 
+Desarrolla el formulario de solicitud de turno en el archivo turnos.html. El formulario debe estar organizado 
+en secciones claramente diferenciadas y utilizar los elementos semanticos de HTML5 correctamente Organiza el formulario en cuatro secciones usando <fieldset> y <legend>:
+Seccion 1: Datos del Paciente
+Campos requeridos:
+a) Nombre (type="text")
+b) Apellido (type="text")
+c) DNI (type="text")
+d) Correo electronico (type="email")
+e) Telefono (type="tel")
+f) Fecha de nacimiento (type="date")
+g) Genero (select): Masculino / Femenino / Otro / Prefiero no especificar
+Seccion 2: Datos del Turno
+Campos requeridos:
+h) Especialidad (select): Clinica General, Cardiologia, Pediatria, Ginecologia, Traumatologia, 
+Neurologia.
+i) Medico (select): Las opciones deben cambiar segun la especialidad seleccionada. Incluye al menos 
+2 medicos por especialidad. Este campo se habilita solo cuando hay una especialidad seleccionada.
+j) Tipo de consulta (select): Primera consulta / Control / Resultado de estudios.
+k) Fecha del turno (type="date").
+l) Hora del turno (type="time").
+m) Modalidad (select): Presencial / Videoconsulta.
+n) Plataforma preferida (select): Zoom / Google Meet / Teams. VISIBLE SOLO si la modalidad es 
+"Videoconsulta".
+Seccion 3: Cobertura Medica
+Campos requeridos:
+o) Cobertura (select): OSDE / Swiss Medical / Galeno / IOMA / Medicus / Sancor Salud / Particular.
+p) Numero de credencial (type="text"): VISIBLE SOLO si la cobertura NO es "Particular".
+q) Plan (type="text"): VISIBLE SOLO si la cobertura NO es "Particular".
+Evaluacion Sumativa 2 | Programacion Web | SaludPlus
+Pagina 6 de 10
+Seccion 4: Informacion Adicional
+Campos requeridos:
+r) Primera visita (type="checkbox"): "Es la primera vez que consulta en SaludPlus". Al marcar esta 
+opcion, se muestra el campo "Como nos conocio".
+s) Como nos conocio (select): Busqueda en internet / Recomendacion de un conocido / Redes 
+sociales / Otro. VISIBLE SOLO si el checkbox anterior esta marcado.
+t) Motivo de consulta (textarea, rows="4"): Descripcion del motivo de la consulta.
+u) Estudios previos (type="checkbox"): "Tiene estudios previos relacionados con la consulta". Al 
+marcar esta opcion, se muestra el campo "Descripcion de estudios".
+v) Descripcion de estudios (textarea, rows="3"): VISIBLE SOLO si el checkbox anterior esta marcado.
+Boton de envio
+• Boton type="submit" con texto "Solicitar Turno".
+• Boton type="reset" con texto "Limpiar formulario"
+
+Requisitos de estructura HTML
+• Cada campo debe tener su etiqueta <label> con el atributo for correspondiente.
+• Los grupos de campos deben estar dentro de <fieldset> con su respectivo <legend>.
+• Usar los tipos de input correctos (email, tel, date, time, text, checkbox).
+• Agregar atributo placeholder descriptivo donde corresponda.
+• Los campos de la Seccion 2 que dependen de la especialidad deben usar el atributo disabled y 
+cambiar a enabled con JavaScript.
+Requisitos de estilos
+• Formulario centrado en pantalla, con ancho maximo de 800px.
+• Cada seccion (fieldset) debe tener estilos visuales diferenciados (borde, fondo suave).
+• Los campos ocultos deben tener display: none; por defecto en CSS.
+• Aplicar estilos de hover y focus en los campos del formulario.
+2:Voy a crear turnos.html y turnos.css, y actualizaré la lista de tareas. Luego añadiré el JavaScript necesario para la lógica de campos dependientes.
+Added 3 todos
+Ahora aplico el parche para crear turnos.html y turnos.css.
+Edited
+turnos.html+233-1
+Ahora agregaré turnos.css con los estilos solicitados (centrado, fieldset diferenciados, ocultar condicionales, hover/focus).
+Listo: creé turnos.html y turnos.css con el formulario semántico y la lógica solicitada.
+Archivos añadidos: turnos.html, turnos.css.
+Implementé: 4 fieldsets con etiquetas y placeholders, campos dependientes (médico, plataforma, credencial/plan, cómo nos conoció, descripción de estudios), disabled en medico hasta seleccionar especialidad, campos ocultos con CSS .conditional { display: none }, y estilos (formulario centrado, max-width 800px, bordes y fondos suaves, hover/focus).
+JS: poblado dinámico de médicos por especialidad y gestión de visibilidad/estado de campos dependientes; reset limpia y oculta condicionales.
+
+3:El código sugerido creo el formulario donde se solicitan los datos de los pacientes para pedir una hora de atención
+4:No se modifico nada ya que lo entregado funcionó sin problemas y cumplio con lo pedido
+--------------------------------------
+1:Archivo principal s/validaciones.js usando tecnologias JavaScript vanilla (ES6+), DOM manipulation. Implementa todas las validaciones del formulario en el archivo js/validaciones.js. Las validaciones deben  ejecutarse al hacer submit del formulario e indicar visualmente el estado de cada campo mediante clases 
+Clases CSS para feedback visual
+Define en turnos.css las siguientes clases y aplicalas desde JavaScript:
+• campo-error: borde rojo, fondo rojo muy claro. Indica que el campo tiene un error.
+• campo-ok: borde verde, fondo verde muy claro. Indica que el campo es valido.
+• mensaje-error: texto de error pequeno de color rojo, visible debajo del campo.
+Reglas de validacion por campo
+Seccion 1 - Datos del paciente
+• Nombre y Apellido: obligatorio, solo letras y espacios (incluye tildes y ene). Expresion regular 
+sugerida: /^[a-zA-ZaeiouAEIOUuUnnNN\s]+$/
+• DNI: obligatorio, entre 7 y 8 digitos numericos.
+• Email: obligatorio, formato valido (usar expresion regular).
+• Telefono: obligatorio, formato valido (puede contener +, guiones y espacios, minimo 8 digitos).
+• Fecha de nacimiento: obligatoria, no puede ser una fecha futura, la edad debe estar entre 0 y 120 
+anos.
+Seccion 2 - Datos del turno
+• Especialidad: obligatoria (no puede quedar en la opcion vacia inicial).
+• Medico: obligatorio una vez que la especialidad esta seleccionada. Las opciones del select deben 
+actualizarse dinamicamente al cambiar la especialidad, usando un objeto JavaScript con los 
+medicos de cada especialidad.
+• Tipo de consulta: obligatorio.
+• Fecha del turno: obligatoria, no puede ser una fecha pasada, debe tener al menos 24 horas de 
+anticipacion desde el momento actual, y debe corresponder a un dia de semana (lunes a viernes; 
+rechazar sabados y domingos).
+• Hora del turno: obligatoria, debe estar dentro del horario de atencion (08:00 a 20:00).
+• Modalidad: obligatoria.
+• Plataforma preferida: obligatoria si la modalidad es "Videoconsulta".
+Seccion 3 - Cobertura medica
+• Cobertura: obligatoria.
+Evaluacion Sumativa 2 | Programacion Web | SaludPlus
+Pagina 8 de 10
+• Numero de credencial: obligatorio si la cobertura NO es "Particular". Debe tener al menos 5 
+caracteres alfanumericos.
+• Plan: obligatorio si la cobertura NO es "Particular".
+Seccion 4 - Informacion adicional
+• Como nos conocio: obligatorio si el checkbox de primera visita esta marcado.
+• Motivo de consulta: obligatorio, minimo 20 caracteres.
+• Descripcion de estudios: obligatoria si el checkbox de estudios previos esta marcado; minimo 20 
+caracteres
+CSS.
+2:Reviso turnos.html y turnos.css para integrar correctamente el archivo validaciones.js y añadir las clases de feedback visual.
+Reviso el contenido exacto de turnos.html y turnos.css antes de aplicar las ediciones.
+Actualizo turnos.html para trasladar la lógica a validaciones.js y añado las clases CSS de feedback.
+Verifico la inclusión del script externo y que las clases de validación estén presentes.
+Implementé la validación completa en validaciones.js y actualicé turnos.html para cargar ese script externo.
+validaciones.js
+valida todos los campos al hacer submit
+aplica clases campo-error / campo-ok
+inserta mensajes con mensaje-error
+maneja las dependencias dinámicas de especialidad → médico, modalidad → plataforma, cobertura → credencial/plan, primera visita → cómo nos conoció, estudios previos → descripción de estudios
+evita envío si hay errores
+turnos.css
+añadí estilos para campo-error, campo-ok y mensaje-error
+turnos.html
+ahora incluye <script src="js/validaciones.js"></script> en lugar del JS inline
+
+3:El código sugerido generó validación para el formulario para que se puedan enviar por formulario solo las  citas  con los datos validos
+4:No se modifico nada ya que lo entregado funcionó sin problemas y cumplio con lo pedido
+-----------------------------
+1:Comportamiento del formulario
+Campos condicionales
+Los siguientes campos deben mostrarse y ocultarse dinamicamente mediante JavaScript (modificando 
+display: none / display: block):
+• Medico: se habilita y actualiza sus opciones cuando el usuario selecciona una especialidad.
+• Plataforma preferida: se muestra solo cuando la modalidad seleccionada es "Videoconsulta".
+• Numero de credencial y Plan: se muestran cuando la cobertura es distinta de "Particular".
+• Como nos conocio: se muestra cuando el checkbox de primera visita esta marcado.
+• Descripcion de estudios: se muestra cuando el checkbox de estudios previos esta marcado.
+Manejo del submit
+• Usar preventDefault() para evitar el envio del formulario por defecto.
+• Recorrer todos los campos y aplicar campo-error o campo-ok segun corresponda.
+• Si existe al menos un error, usar element.scrollIntoView({ behavior: "smooth" }) para desplazarse al 
+primer campo invalido.
+• Si todos los campos son validos, mostrar un mensaje de confirmacion en pantalla con un numero de 
+turno generado con Math.random() (formato: TURN-XXXXX, donde X son digitos).
+• El mensaje de confirmacion debe incluir: nombre del paciente, especialidad, fecha y hora del turno, 
+y el numero de turno generado.
+Objeto de medicos por especialidad
+Define en validaciones.js un objeto JavaScript con la siguiente estructura (completa con al menos 2 medicos 
+por especialidad):
+const medicosPorEspecialidad = {
+ "clinica": ["Dr. Gomez, Carlos", "Dra. Lopez, Maria"],
+ "cardiologia": ["Dr. Perez, Juan", "Dra. Torres, Ana"],
+ "pediatria": ["Dra. Diaz, Laura", "Dr. Soto, Pablo"],
+ "ginecologia": ["Dra. Romero, Valeria", "Dra. Castro, Elena"],
+ "traumatologia": ["Dr. Ramos, Sergio", "Dr. Herrera, Diego"],
+ "neurologia": ["Dr. Molina, Andres", "Dra. Vargas, Cecilia"]
+}
+2:Reviso validaciones.js y turnos.html para ajustar el submit y el mensaje de confirmación en pantalla.
+Ajusto turnos.html, turnos.css y validaciones.js para cumplir el comportamiento de submit y mostrar confirmación en pantalla.
+Verifico las llamadas a setStatus dentro de la validación para asegurar que todas reporten los campos inválidos correctamente.
+Reviso las llamadas restantes a setStatus en validaciones.js para asegurar consistencia con invalidFields.
+He terminado la mejora del formulario:
+turnos.html
+agregué un contenedor #confirmationMessage para mostrar la confirmación en pantalla
+actualicé los valores de especialidad a value="clinica", value="cardiologia", etc.
+turnos.css
+añadí estilos para .confirmation
+mantengo .campo-error, .campo-ok y .mensaje-error
+validaciones.js
+usé preventDefault() en submit
+recopilo todos los campos invalidos y aplico campo-error / campo-ok
+si hay errores, desplaza al primer campo inválido con scrollIntoView({ behavior: 'smooth' })
+si es válido, muestra confirmación con número generado TURN-XXXXX
+implementé el objeto medicosPorEspecialidad con las claves y médicos solicitados
+mantengo la lógica dinámica de campos condicionales usando
+
+3:Se agregaron campos condicionales dinámicos y se agregaron sus correspondientes validaciones 
+4:No se modifico nada ya que lo entregado funcionó sin problemas y cumplio con lo pedido
